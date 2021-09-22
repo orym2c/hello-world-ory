@@ -1,4 +1,4 @@
-valuesFilePath: ./pipelines.resources.yml
+valuesFilePath: ./pipelinesResources.yml
 
 pipelines:
   - name: jfrog_pipeline
