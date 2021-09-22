@@ -28,8 +28,6 @@ resources:
        
  
 pipelines:
-
-pipelines:
   - name: MyMavenPipeline
     steps:
       - name: MavenWithAll
