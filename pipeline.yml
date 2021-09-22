@@ -1,4 +1,3 @@
-
 resources:
   - name: git_repo
     type: GitRepo
