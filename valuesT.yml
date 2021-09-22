@@ -1,18 +1,1 @@
-artifactoryIntegration: ory_rt_integration
- 
-GitRepo:
-  name: myGitRepo
-  gitProvider: oryGitlabInt
-  path: ./complete/
-  branches:
-    include: master
- 
-  
- 
-Pipeline:
-  name: m2cTestPipeline
- 
 
- 
-Bash:
-  name: myBashStep
