@@ -1,3 +1,5 @@
+valuesFilePath: ./pipelines.resources.yml
+
 pipelines:
   - name: jfrog_pipeline
     steps:
