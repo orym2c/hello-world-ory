@@ -1,10 +1,9 @@
-
 artifactoryIntegration: ory_rt_integration
  
 GitRepo:
   name: myGitRepo
   gitProvider: ory_gitlab_int
-  path: ./
+  path: ./complete/
   branches:
     include: master
  
