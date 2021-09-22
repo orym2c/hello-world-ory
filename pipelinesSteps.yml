@@ -1,4 +1,12 @@
-valuesFilePath: ./pipelinesResources.yml
+
+
+resources:
+  - name: git_repo
+    type: GitRepo
+    configuration:
+      gitProvider: ory_gitlab_int
+      path: orym2c/oryproject1
+​
 
 pipelines:
   - name: jfrog_pipeline
@@ -12,5 +20,7 @@ pipelines:
             - name: git_repo
           integrations:
             - name: repositoryName
+
+
      
      
