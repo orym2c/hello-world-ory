@@ -1,0 +1,31 @@
+resources:
+  - name: git_repo
+    type: GitRepo
+    configuration:
+      gitProvider: roybs_gh
+      path: roybensh/node-jnkns-exmp
+​
+  - name: build_info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: Artifactory
+      buildName: build_name
+      buildNumber: 1
+​
+  - name: release_bundle
+    type: ReleaseBundle
+    configuration:
+      sourceDistribution: distributionIntegration
+      name: node_release_bundle
+      version: 1.1.4
+      isSigned: true
+​
+  - name: distribution_rule
+    type: DistributionRule
+    configuration:
+      sourceDistribution: distributionIntegration
+      serviceName: edge1
+      siteName: edge1
+      cityName: London
+      countryCodes:
+        - GB
