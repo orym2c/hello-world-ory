@@ -1,101 +1,14 @@
 pipelines:
   - name: jfrog_pipeline
     steps:
-      - name: npm_build
-        type: NpmBuild
+      - name: MavenWithArtifactoryBuild
+        type: MvnBuild
         configuration:
           sourceLocation: .
-          repositoryName: npm
+         
           inputResources:
             - name: git_repo
           integrations:
-            - name: Artifactory
-      - name: npm_publish
-        type: NpmPublish
-        configuration:
-          repositoryName: npm
-          forceXrayScan: false
-          failOnScan: false
-          inputSteps:
-            - name: npm_build
-          integrations:
-            - name: Artifactory
-      - name: docker_build
-        type: DockerBuild
-        configuration:
-          affinityGroup: afgroup
-          dockerFileLocation: .
-          dockerFileName: Dockerfile
-          dockerImageName: 10.154.15.234:8082/docker/node_exmp
-          dockerImageTag: ${run_number}
-          inputSteps:
-            - name: npm_build
-          inputResources:
-            - name: git_repo
-          integrations:
-            - name: Artifactory
-        execution:
-          onStart:
-            - echo "Preparing for work..."
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-      - name: docker_push
-        type: DockerPush
-        configuration:
-          affinityGroup: afgroup
-          targetRepository: docker
-          integrations:
-            - name: Artifactory
-          inputSteps:
-            - name: docker_build
-        execution:
-          onStart:
-            - echo "Preparing for work..."
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete:
-            - echo "Cleaning up some stuff"
-      - name: publish_build_info
-        type: PublishBuildInfo
-        configuration:
-          inputSteps:
-            - name: docker_push
-          outputResources:
-            - name: build_info
-      - name: scan
-        type: XrayScan
-        configuration:
-          failOnScan: true
-          inputSteps:
-            - name: publish_build_info
-          inputResources:
-            - name: build_info
-              trigger: false
-      - name: bundle
-        type: CreateReleaseBundle
-        configuration:
-          releaseBundleName: docker_bundle
-          releaseBundleVersion: 1.1.4
-          dryRun: false
-          sign: true
-          inputResources:
-            - name: build_info
-          outputResources:
-            - name: release_bundle
-      - name: distribute
-        type: DistributeReleaseBundle
-        configuration:
-          inputSteps:
-            - name: bundle
-          dryRun: false
-          inputResources:
-            - name: release_bundle # one releaseBundle is required
-              trigger: false
-            - name: distribution_rule # one distributionRule is required
-              trigger: false # default true
+            - name: repositoryName
+     
+     
