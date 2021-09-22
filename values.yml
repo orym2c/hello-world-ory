@@ -1,1 +1,27 @@
 
+artifactoryIntegration: ory_rt_integration
+ 
+GitRepo:
+  name: myGitRepo
+  gitProvider: ory_gitlab_int
+  path: ./
+  branches:
+    include: master
+ 
+Image:
+  name: myDockerImage
+  sourceRepository: mySourceRepo     
+ 
+Pipeline:
+  name: m2cTestPipeline
+ 
+DockerBuild:
+  name: myDockerBuild  
+  dockerFileName: Dockerfile
+  dockerImageName: <image name>
+ 
+DockerPush:
+  targetRepository: docker-local
+ 
+Bash:
+  name: myBashStep
