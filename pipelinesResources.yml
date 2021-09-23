@@ -1,7 +1,0 @@
-resources:
-  - name: git_repo
-    type: GitRepo
-    configuration:
-      gitProvider: ory_gitlab_int
-      path: orym2c/oryproject1
-​
