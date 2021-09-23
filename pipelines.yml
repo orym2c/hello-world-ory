@@ -36,6 +36,7 @@ pipelines:
             - name: myBuildInfo
           integrations:
             - name: ory_rt_integration
+          autoPublishBuildInfo: true 
 
       - name: xrayScanStep
         type: XrayScan
