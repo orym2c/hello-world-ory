@@ -20,6 +20,8 @@ pipelines:
           deployerReleaseRepo: default-maven-local
           inputResources:
             - name: git_repo
+          outputResources:
+            - name: mvn_build_info
           integrations:
             - name: ory_rt_integration
 
