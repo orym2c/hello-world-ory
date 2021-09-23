@@ -32,6 +32,8 @@ pipelines:
         configuration:
           inputResources:
             - name: myBuildInfo
+          outputResources:
+            - name: outputBuildInfo
 
  
 
