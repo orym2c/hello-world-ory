@@ -21,7 +21,7 @@ pipelines:
           inputResources:
             - name: git_repo
           outputResources:
-            - name: default-maven-local
+            - name: ory_rt_integration
           integrations:
             - name: ory_rt_integration
 
