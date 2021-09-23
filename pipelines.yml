@@ -12,6 +12,13 @@ resources:
       buildName: SampleApp
       buildNumber: 1
 
+  - name: myBuildInfoForOutput
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: ory_rt_integration
+      buildName: SampleApp
+      buildNumber: 1
+
 pipelines:
   - name: my_first_pipeline
     steps:
@@ -33,7 +40,7 @@ pipelines:
           inputResources:
             - name: myBuildInfo
           outputResources:
-            - name: outputBuildInfo
+            - name: myBuildInfoForOutput
 
  
 
