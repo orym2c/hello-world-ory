@@ -20,13 +20,18 @@ pipelines:
         configuration:
           sourceLocation: ./complete
           autoPublishBuildInfo: true 
-          forceXrayScan: true 
           inputResources:
             - name: git_repo
           outputResources: 
             - name: myBuildInfo
           integrations:
             - name: ory_rt_integration
+
+      - name: xrayScanStep
+        type: XrayScan
+        configuration:
+          inputResources:
+            - name: myBuildInfo
 
  
 
