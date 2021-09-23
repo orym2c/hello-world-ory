@@ -1,0 +1,19 @@
+resources:
+  - name: git_repo
+    type: GitRepo
+    configuration:
+      gitProvider: ory_gitlab_int
+      path: orym2c/oryproject1
+​
+
+    pipelines:
+  - name: my_first_pipeline
+    steps:
+      - name: MavenWithArtifactoryBuild
+        type: MvnBuild
+        configuration:
+          inputResources:
+            # Sets up step to be triggered when there are commit events to myFirstRepo
+            - name: git_repo
+          integrations:
+            - name: repositoryName
