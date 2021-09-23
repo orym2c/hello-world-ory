@@ -11,7 +11,7 @@ pipelines:
       - name: MavenWithArtifactoryBuild
         type: MvnBuild
         configuration:
-          sourceLocation: .
+          sourceLocation: ./complete
           inputResources:
             - name: git_repo
           integrations:
