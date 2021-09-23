@@ -12,7 +12,11 @@ pipelines:
         type: MvnBuild
         configuration:
           sourceLocation: ./complete
+          forceXrayScan: true
+          autoPublishBuildInfo: true
           inputResources:
             - name: git_repo
           integrations:
             - name: ory_rt_integration
+
+       
