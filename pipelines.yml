@@ -26,7 +26,6 @@ pipelines:
         type: MvnBuild
         configuration:
           sourceLocation: ./complete
-          autoPublishBuildInfo: true 
           inputResources:
             - name: git_repo
           outputResources: 
@@ -41,6 +40,14 @@ pipelines:
             - name: myBuildInfo
           outputResources:
             - name: myBuildInfoForOutput
+
+      - name: publishBuildInfoStep
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: myBuildInfo
+          outputResources:
+            - name: myBuildInfoForOutput 
 
  
 
