@@ -44,8 +44,6 @@ pipelines:
       - name: publishBuildInfoStep
         type: PublishBuildInfo
         configuration:
-          inputSteps:
-            - name: myBuildInfoForOutput
           outputResources:
             - name: myBuildInfoForOutput 
 
