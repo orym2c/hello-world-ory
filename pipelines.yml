@@ -12,7 +12,6 @@ pipelines:
         type: MvnBuild
         configuration:
           inputResources:
-            # Sets up step to be triggered when there are commit events to myFirstRepo
             - name: git_repo
           integrations:
             - name: ory_rt_integration
