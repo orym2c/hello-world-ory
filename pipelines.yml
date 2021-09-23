@@ -19,10 +19,16 @@ pipelines:
         type: MvnBuild
         configuration:
           sourceLocation: ./complete
+          autoPublishBuildInfo: true
           inputResources:
             - name: git_repo
+          outputResources: 
+            - name: myBuildInfo
           integrations:
             - name: ory_rt_integration
+
+ 
+
 
 
        
