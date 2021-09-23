@@ -4,9 +4,8 @@ resources:
     configuration:
       gitProvider: ory_gitlab_int
       path: orym2c/oryproject1
-​
 
-    pipelines:
+pipelines:
   - name: my_first_pipeline
     steps:
       - name: MavenWithArtifactoryBuild
