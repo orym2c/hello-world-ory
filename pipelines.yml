@@ -28,10 +28,10 @@ pipelines:
           sourceLocation: ./complete
           inputResources:
             - name: git_repo
-          resolverSnapshotRepo: default-maven-remote
-          resolverReleaseRepo: default-maven-remote
-          deployerSnapshotRepo: default-maven-remote
-          deployerReleaseRepo: default-maven-remote
+          resolverSnapshotRepo: default-maven-virtual
+          resolverReleaseRepo: default-maven-virtual
+          deployerSnapshotRepo: default-maven-virtual
+          deployerReleaseRepo: default-maven-virtual
           outputResources: 
             - name: myBuildInfo
           integrations:
