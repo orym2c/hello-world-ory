@@ -5,6 +5,13 @@ resources:
       gitProvider: ory_gitlab_int
       path: orym2c/oryproject1
 
+  - name: myBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: ory_rt_integration
+      buildName: SampleApp
+      buildNumber: 1
+
 pipelines:
   - name: my_first_pipeline
     steps:
